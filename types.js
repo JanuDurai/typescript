@@ -2,21 +2,6 @@
 exports.__esModule = true;
 var stu_name = "janu shree";
 console.log(stu_name);
-//interface-object
-var details = {
-    name: "janu",
-    age: 23
-};
-//interface-class 
-var student_details = /** @class */ (function () {
-    function student_details(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    return student_details;
-}());
-var stu_1 = new student_details("boomi", 22);
-console.log(details.name);
 // var subtypes
 var varnull = null;
 var varundef = undefined;
