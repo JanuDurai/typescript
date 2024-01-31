@@ -1,7 +1,8 @@
 //interface-object
 var details = {
     name: "janu",
-    age: 23
+    age: 23,
+    //dept: "eee",
 };
 //interface-class 
 var student_details = /** @class */ (function () {
