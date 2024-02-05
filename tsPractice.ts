@@ -21,7 +21,7 @@ interface userInterface {
     marks:number,
     grade:string,
     hasregistered: boolean,
-    isDancer?: boolean,
+    // isDancer?: boolean,
     updateProperties ? ();
 }
 
@@ -60,9 +60,9 @@ class studentDetails{
 let student_1:userInterface = new studentDetails("varna",250,true,2,'A',true);
 console.log( student_1); 
 
-student_1.isDancer=false;
+// student_1.isDancer=false;
 
-student_1.updateProperties();
+// student_1.updateProperties();
 console.log(student_1);
 
  let sampleText="text";
@@ -74,8 +74,10 @@ console.log(student_1);
  }
  
  let student_3:userInterface = new studentDetails("Anjum",270,false,2,'A',true);
-student_3=getStudentDetails(student_3);
- console.log(student_3);
+let updatedstudent_3=getStudentDetails(student_3);
+ console.log("func returned obj:");
+ console.log(updatedstudent_3);
+ 
  
 
 //  type
@@ -105,9 +107,65 @@ anyTypeVariable = ()=> {
 }
 anyTypeVariable();
 
+class static_function{
+  static count:number=0;
+  num1:number;
+  constructor(num1){
+      this.num1=num1;
+      ++static_function.count;
+      console.log(static_function.count);
+      
+  }
+}
+let object=new static_function(10);
+let object2=new static_function(23);
+// static_function.count=1
+
+// generics
+
+function typevariablesfunction<Type1,Type2>(variable1:Type1,variable2:Type2): [Type2,Type1]{
+       return [variable2,variable1];
+}
+
+console.log(typevariablesfunction<number,string>(50,"string"));
+
+interface user<type>{
+      var1:Array<type>,
+      get<type>() : type,
+      add<type>():void
+}
+
+// let user1:user<string> ={var1:["janu","shree","durai"]}
+
+// user1.add(str){
+//       user1.var1.push(str);
+// }
+
+// user1.add("string1");
+
+// console.log(user1.var1);
 
 
+// let Arrayofstrings:Array<string> =["array","of","strings"];
+// console.log(Arrayofstrings);
 
+
+//structural type system
+
+interface typecheck {
+      x:number,
+      y:number
+}
+
+function typecheckFunction(shape:typecheck){
+     console.log(shape.x,shape.y);     
+}
+
+let rec = {x:4,y:5}
+typecheckFunction(rec);
+
+let parallelogram={x:4,z:8,y:9}
+typecheckFunction(parallelogram);
 
 
 

@@ -35,8 +35,8 @@ var studentDetails = /** @class */ (function () {
 }());
 var student_1 = new studentDetails("varna", 250, true, 2, 'A', true);
 console.log(student_1);
-student_1.isDancer = false;
-student_1.updateProperties();
+// student_1.isDancer=false;
+// student_1.updateProperties();
 console.log(student_1);
 var sampleText = "text";
 function getStudentDetails(student_3) {
@@ -45,8 +45,9 @@ function getStudentDetails(student_3) {
     return student_3;
 }
 var student_3 = new studentDetails("Anjum", 270, false, 2, 'A', true);
-student_3 = getStudentDetails(student_3);
-console.log(student_3);
+var updatedstudent_3 = getStudentDetails(student_3);
+console.log("func returned obj:");
+console.log(updatedstudent_3);
 function arrayConcat(num1, num2) {
     return num1.concat(num2);
 }
@@ -60,3 +61,27 @@ anyTypeVariable = function () {
     console.log("any variable takes as a function");
 };
 anyTypeVariable();
+var static_function = /** @class */ (function () {
+    function static_function(num1) {
+        this.num1 = num1;
+        ++static_function.count;
+        console.log(static_function.count);
+    }
+    static_function.count = 0;
+    return static_function;
+}());
+var object = new static_function(10);
+var object2 = new static_function(23);
+// static_function.count=1
+// generics
+function typevariablesfunction(variable1, variable2) {
+    return [variable2, variable1];
+}
+console.log(typevariablesfunction(50, "string"));
+function typecheckFunction(shape) {
+    console.log(shape.x, shape.y);
+}
+var rec = { x: 4, y: 5 };
+typecheckFunction(rec);
+var parallelogram = { x: 4, z: 8, y: 9 };
+typecheckFunction(parallelogram);
