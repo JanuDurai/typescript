@@ -16,7 +16,7 @@ let stringVariable: String="Hello!!";
 console.log(stringVariable);
 
 interface userInterface {
-    name:string,
+    name :string,
     standard: number,
     marks:number,
     grade:string,
@@ -31,9 +31,23 @@ interface userInterface {
     marks:233,
     grade: 'B',
     hasregistered:true,
+    // updateProperties(){
+    //           stuDetails.grade = "A";
+    //           console.log("stu updated grade is: ",stuDetails.grade);
+    //         }
     // isDancer:true,
  }   
+ stuDetails.name="oviya";
+
  console.log(stuDetails);
+
+stuDetails.updateProperties = ()=> {
+  stuDetails.grade = "A";
+  console.log("stu updated grade is........... ",stuDetails.grade);
+};
+
+stuDetails.updateProperties();
+
 
 class studentDetails{
     name:string;
@@ -73,8 +87,8 @@ console.log(student_1);
          return student_3;
  }
  
- let student_3:userInterface = new studentDetails("Anjum",270,false,2,'A',true);
-let updatedstudent_3=getStudentDetails(student_3);
+ let student_3 = new studentDetails("Anjum",270,false,2,'A',true);
+let updatedstudent_3:userInterface=getStudentDetails(student_3);
  console.log("func returned obj:");
  console.log(updatedstudent_3);
  
@@ -85,6 +99,10 @@ let updatedstudent_3=getStudentDetails(student_3);
 type isBulbOn = "On" | "Off";
 type isDoorOpen = "Open" | "Closed";
 
+let bulbstatus:isBulbOn = "On";
+    // bulbstatus="strng"; 
+  let doorstatus:isDoorOpen="Closed";
+  // doorstatus:isDoorOpen="str";
 
 function arrayConcat(num1:number[],num2:number | number[]):number|number[]{
             return num1.concat(num2);
@@ -167,14 +185,22 @@ typecheckFunction(rec);
 let parallelogram={x:4,z:8,y:9}
 typecheckFunction(parallelogram);
 
+//func declaration
 
+let Addition : (num1:number,num2:number) => void;
 
+Addition = (num1:number,num2:number) => {
+         console.log("Additon of 2 numbers", num1+num2)};
 
+Addition(10,20);
 
+//without func dec
 
+function Subtraction(num1:number,num2:number) : void{
+       console.log("subtraction of 2 numbers", num1-num2);
+}
 
-
-
+Subtraction(90,50);
 
 
 

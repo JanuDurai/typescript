@@ -15,9 +15,19 @@ var stuDetails = {
     marks: 233,
     grade: 'B',
     hasregistered: true,
+    // updateProperties(){
+    //           stuDetails.grade = "A";
+    //           console.log("stu updated grade is: ",stuDetails.grade);
+    //         }
     // isDancer:true,
 };
+stuDetails.name = "oviya";
 console.log(stuDetails);
+stuDetails.updateProperties = function () {
+    stuDetails.grade = "A";
+    console.log("stu updated grade is........... ", stuDetails.grade);
+};
+stuDetails.updateProperties();
 var studentDetails = /** @class */ (function () {
     function studentDetails(name, marks, isDancer, standard, grade, hasregistered) {
         this.name = name;
@@ -48,6 +58,10 @@ var student_3 = new studentDetails("Anjum", 270, false, 2, 'A', true);
 var updatedstudent_3 = getStudentDetails(student_3);
 console.log("func returned obj:");
 console.log(updatedstudent_3);
+var bulbstatus = "On";
+// bulbstatus="strng"; 
+var doorstatus = "Closed";
+// doorstatus:isDoorOpen="str";
 function arrayConcat(num1, num2) {
     return num1.concat(num2);
 }
@@ -85,3 +99,14 @@ var rec = { x: 4, y: 5 };
 typecheckFunction(rec);
 var parallelogram = { x: 4, z: 8, y: 9 };
 typecheckFunction(parallelogram);
+//func declaration
+var Addition;
+Addition = function (num1, num2) {
+    console.log("Additon of 2 numbers", num1 + num2);
+};
+Addition(10, 20);
+//without func dec
+function Subtraction(num1, num2) {
+    console.log("subtraction of 2 numbers", num1 - num2);
+}
+Subtraction(90, 50);
